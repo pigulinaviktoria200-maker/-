@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Smarteye V4.5A — Скринер плотностей</title>
+    <link rel="icon" type="image/png" href="https://preview.redd.it/j3k0qgv035qg1.png?auto=webp&s=8a0f5c12b0240a693767eed650baa3ab3a8088cd">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Identity Services SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+      html, body, #root { 
+        height: 100dvh; margin: 0; padding: 0; background: #000000; color: #e6eef6;
+        overscroll-behavior: none;
+        cursor: default;
+      }
+      
+      /* Reset cursor for interactive elements */
+      button, a, [role="button"], .cursor-pointer, .qc-hud-card, .qc-ob-row {
+        cursor: pointer !important;
+      }
+      
+      input, textarea {
+        cursor: text !important;
+      }
+
+      /* Global Technical Grid Background */
+      body {
+        background-color: #020203;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        background-position: center center;
+        scrollbar-gutter: stable;
+      }
+
+      .custom-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+      .custom-scroll::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.5); border-radius: 10px; border: 2px solid #000; }
+      .custom-scroll::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+
+      @media (max-width: 1200px) and (orientation: landscape) {
+        .mobile-landscape-2-col {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+      }
+      
+      /* Subtle vignette to focus attention on content */
+      #root::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
